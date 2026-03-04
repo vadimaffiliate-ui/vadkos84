@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Healing Navigator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Quantum Healing Navigator</h1>
+      <p>
+        Interactive, multimodal wellness explorer with diagnostics, reflective feedback,
+        and evolving AI-style guidance.
+      </p>
+      <p class="disclaimer">
+        Wellness simulation only — not medical advice, diagnosis, or treatment.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="panel diagnostics">
+        <h2>Diagnostics Hub</h2>
+        <div class="tabs" role="tablist" aria-label="Diagnostics tools">
+          <button class="tab active" data-target="finger" role="tab">Finger Biofield Scan</button>
+          <button class="tab" data-target="face" role="tab">Face Energy Scan</button>
+          <button class="tab" data-target="astro" role="tab">Astrology Insight</button>
+          <button class="tab" data-target="numerology" role="tab">Numerology Schools</button>
+        </div>
+
+        <article class="tab-panel active" id="finger" role="tabpanel">
+          <h3>Finger Biofield Scan</h3>
+          <p>Adjust perceived signals from each finger. The model estimates energy coherence by element channel.</p>
+          <div id="finger-sliders" class="sliders"></div>
+          <button id="run-finger" class="primary">Run Biofield Analysis</button>
+          <div id="finger-result" class="result"></div>
+        </article>
+
+        <article class="tab-panel" id="face" role="tabpanel">
+          <h3>Face Energy Scan</h3>
+          <p>Upload a face image and tune visible energy markers for simulation-based interpretation.</p>
+          <input type="file" id="face-image" accept="image/*" />
+          <img id="face-preview" alt="Face preview" hidden />
+          <div class="sliders" id="face-markers"></div>
+          <button id="run-face" class="primary">Run Face Scan</button>
+          <div id="face-result" class="result"></div>
+        </article>
+
+        <article class="tab-panel" id="astro" role="tabpanel">
+          <h3>Astrology Insight</h3>
+          <div class="grid two">
+            <label>Birth Date <input type="date" id="birth-date" /></label>
+            <label>Birth Time <input type="time" id="birth-time" /></label>
+            <label>Birth City <input type="text" id="birth-city" placeholder="City" /></label>
+            <label>Current Focus
+              <select id="astro-focus">
+                <option value="healing">Healing</option>
+                <option value="love">Love</option>
+                <option value="work">Work</option>
+                <option value="purpose">Purpose</option>
+              </select>
+            </label>
+          </div>
+          <button id="run-astro" class="primary">Generate Astrology Reading</button>
+          <div id="astro-result" class="result"></div>
+        </article>
+
+        <article class="tab-panel" id="numerology" role="tabpanel">
+          <h3>Numerology Schools</h3>
+          <p>Compare Pythagorean and Chaldean systems with name vibration overlays.</p>
+          <div class="grid two">
+            <label>Full Birth Name <input type="text" id="full-name" placeholder="Your name" /></label>
+            <label>Birth Date <input type="date" id="num-birth-date" /></label>
+          </div>
+          <button id="run-num" class="primary">Run Numerology Matrix</button>
+          <div id="num-result" class="result"></div>
+        </article>
+      </section>
+
+      <section class="panel modalities">
+        <h2>Modalities & Tools</h2>
+        <div class="tool-grid" id="tool-grid"></div>
+      </section>
+
+      <section class="panel ai-guide">
+        <h2>Sentient Living AI Interpretation</h2>
+        <p>The guide synthesizes all scans into a living protocol. It adapts with every feedback cycle.</p>
+
+        <div class="grid two">
+          <label>Mood (1-10)
+            <input type="range" min="1" max="10" value="5" id="mood" />
+          </label>
+          <label>Energy (1-10)
+            <input type="range" min="1" max="10" value="5" id="energy" />
+          </label>
+          <label>Stress (1-10)
+            <input type="range" min="1" max="10" value="5" id="stress" />
+          </label>
+          <label>Sleep Quality (1-10)
+            <input type="range" min="1" max="10" value="5" id="sleep" />
+          </label>
+        </div>
+
+        <button id="synthesize" class="primary">Synthesize Unified Prescription</button>
+        <div id="ai-output" class="result"></div>
+
+        <h3>Feedback Loop</h3>
+        <textarea id="feedback" rows="3" placeholder="What changed after trying today's protocol?"></textarea>
+        <button id="submit-feedback">Update Living Model</button>
+        <ul id="memory-log"></ul>
+      </section>
+    </main>
+
+    <footer>
+      Built for reflection, mindfulness, and intentional habit design.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
