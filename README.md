@@ -3,7 +3,7 @@
 Interactive browser app that combines multiple wellness-style diagnostic simulations and adaptive guidance:
 
 - Finger biofield scanning simulation
-- Face energy scan simulation using interactive marker controls
+- Face energy scan simulation with image preview
 - Astrology reading generator
 - Numerology matrix using Pythagorean + Chaldean systems
 - AI-style unified interpretation and evolving feedback memory

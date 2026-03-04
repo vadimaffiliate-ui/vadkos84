@@ -227,8 +227,20 @@ function submitFeedback() {
   document.getElementById('feedback').value = '';
 }
 
+function setupImagePreview() {
+  const input = document.getElementById('face-image');
+  const preview = document.getElementById('face-preview');
+  input.addEventListener('change', () => {
+    const file = input.files?.[0];
+    if (!file) return;
+    preview.src = URL.createObjectURL(file);
+    preview.hidden = false;
+  });
+}
+
 initUI();
 setTabs();
+setupImagePreview();
 
 document.getElementById('run-finger').addEventListener('click', runFingerScan);
 document.getElementById('run-face').addEventListener('click', runFaceScan);

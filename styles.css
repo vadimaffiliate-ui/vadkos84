@@ -98,6 +98,12 @@ input, select, textarea {
 }
 input[type='range'] { padding: 0; }
 
+#face-preview {
+  margin-top: 0.6rem;
+  max-width: 220px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
 
 .result {
   margin-top: 0.7rem;
